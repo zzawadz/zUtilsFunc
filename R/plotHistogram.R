@@ -1,6 +1,7 @@
-plotHistogram = function(x, freq = TRUE, colors = 1:length(x), nl = 20, breaks = 30, ...)
+plotHistogram = function(x, freq = TRUE, colors = 1:length(x), alpha = 1, nl = 20, breaks = 30, ...)
 {
   names = names(x)
+  colors = addAlpha(colors, alpha)
   
   hists = sapply(x, hist, plot = FALSE, simplify=FALSE, breaks = breaks)
   
@@ -42,9 +43,6 @@ plotHistogram = function(x, freq = TRUE, colors = 1:length(x), nl = 20, breaks =
 
 
 
-addAlpha <- function(col, alpha=1){
-  apply(sapply(col, col2rgb)/255, 2, function(x) 
-          rgb(x[1], x[2], x[3], alpha=alpha))  
-}
+
 
 

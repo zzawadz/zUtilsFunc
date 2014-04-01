@@ -16,13 +16,7 @@ plotSigmaExample = function(sigma, distr, df = 3)
     yy = dt(xx,df=df)
   }
   
-  
   name = paste0(sigma,"* sigma")
-  
-  
-  
-  
-  
   xxx = c(xx[abs(xx)<=sigma])
   xxx = c(xxx,rev(xxx))
   yyy = c(yy[abs(xx)<=sigma],rep(0,sum(abs(xx)<=sigma)))
